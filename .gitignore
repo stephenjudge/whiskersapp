@@ -1,0 +1,9 @@
+.DS_Store
+
+whiskers/cache/*
+!whiskers/cache/index.html
+!whiskers/cache/.htaccess
+
+whiskers/logs/*
+!whiskers/logs/index.html
+!whiskers/logs/.htaccess

@@ -1,0 +1,227 @@
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+#header-container, #main, footer {
+  width: 600px;
+  margin: auto;
+}
+
+header {
+  position: relative;
+}
+
+h1 { margin-left: 126px; margin-bottom: 10px; }
+h1 a { text-decoration: none; color: #000; }
+h4 { margin:0; }
+
+#user { position: absolute; top: 15px; right: 7px; }
+#user a { font-size: 0.9em; color: #000; text-decoration: none; }
+
+.flash {
+  color: black;
+  background: lightGreen;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.flash.error {
+  background: lightCoral;
+  color:#fff;
+}
+
+nav {
+  float: left;
+  margin-top: 15px;
+}
+
+nav ul { 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a, nav a:active, nav a:visited { 
+  color: black;
+  display: block;
+  width: 85px;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 0px;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-right: 0px;
+  background: #FFFFFb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+nav a:hover { background: #efefef; }
+
+textarea:hover, textarea:focus { background: #FFFFFb; }
+
+#content {
+  float: left;
+  padding: 20px;
+  /*border: 1px solid #efefef;*/
+  width: 450px;
+  background: #fff;
+  min-height: 100px;
+}
+
+#count { text-align: right; font-size: 0.8em; }
+
+#text { width: 444px; } /* 450 - 2px left padding - 2px right padding - 1px border left - 1px border right */
+
+.post { clear: both; padding: 10px 0; }
+.post:hover { background: #fffffb; }
+.post .text { float: left; }
+.post .date { float: right; color: #888; font-size: 0.8em; }
+
+.install { list-style:none; padding:0; margin:0; }
+.check { list-style:none outside none; padding:0 0 0 24px; margin:0 0 10px; }
+.check:before { content:"\2714"; color:#2f6; margin-left:-24px; padding-right:10px; }
+
+label { width: 135px; float: left; display: block; }
+.form-item { margin-top: 10px; }
+
+footer { text-align: center; }
+#face { margin-top: 20px; opacity: 0.75; -webkit-transition: opacity 1s ease-in; }
+#face.chesire { opacity: 0; }
+
+a.delete { 
+  color: red;
+  text-decoration: none;
+}
+
+/* posting - stacks interface */
+.driver header {
+  background:#e3f3ff;
+  z-index:1;
+  position:relative;
+  padding:8px;
+  /* css3 */
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  border-radius:8px;
+}
+.driver header h4 {
+  color:#666;
+}
+.driver textarea {
+  margin:10px;
+  border-color:#ddd;
+}
+.driver .remove {
+  position:absolute;
+  right:10px;
+  top:5px;
+}
+.triangle-border {
+  position:relative;
+  /*padding:0 15px;*/
+  margin:1em 0 3em;
+  border:3px solid #ddd;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+.triangle-border.left {
+  margin-left:30px;
+}
+.triangle-border:before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+  border-style:solid;
+    border-color:#ddd transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+/* creates the smaller  triangle */
+.triangle-border:after {
+  content:"";
+  position:absolute;
+  bottom:-13px; /* value = - border-top-width - border-bottom-width */
+  left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+  border-width:13px 13px 0;
+  border-style:solid;
+  border-color:#fff transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+/* creates the larger triangle */
+.triangle-border.left:before {
+  top:10px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:10px 28px 10px 0;
+  border-color:transparent #ddd;
+}
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+  top:10px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:-22px; /* value = - border-left-width - border-right-width */
+  border-width:10px 28px 10px 0;
+  border-color:transparent #fff;
+}
+
+/* post-presentation classes */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* Page curl style from: http://square.github.com/cube/ */
+.curl {
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.curl:before,
+.curl:after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 50%;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.curl:before {
+  left: 0;
+  -moz-transform: skew(-10deg) rotate(-2deg);
+  -moz-transform-origin: 0% 100%;
+  -o-transform: skew(-10deg) rotate(-2deg);
+  -o-transform-origin: 0% 100%;
+  -webkit-transform: skew(-10deg) rotate(-2deg);
+  -webkit-transform-origin: 0% 100%;
+}
+
+.curl:after {
+  right: 0;
+  -moz-transform: skew(10deg) rotate(2deg);
+  -moz-transform-origin: 100% 100%;
+  -o-transform: skew(10deg) rotate(2deg);
+  -o-transform-origin: 100% 100%;
+  -webkit-transform: skew(10deg) rotate(2deg);
+  -webkit-transform-origin: 100% 100%;
+}
+
+.error {
+  border-color:lightCoral;
+  color:lightCoral;
+}
+.success {
+  background:#6fa;
+  border-color:#061;
+  border-width:1px;
+  color:#061;
+}
